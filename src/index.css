@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#summary {
+  color: #1c344c;
+}
+
+.nav {
+  background-color: #1c344c;
+  color: #C6E070;
+}
+
+.icons {
+  color: #C6E070;
+}
+
+.btn {
+  background-color: #1c344c;
+}
+
+.task {
+  background-color: white;
+}
+
+.overview {
+  background-color: #F2F2F2;
+  color: #1c344c;
+}
+
+.upcoming {
+  background-color: #C6E070;
+}
+
+.finished {
+  background-color: #1c344c;
+}
+
+.new {
+  color: #C6E070;
+}
