@@ -1,10 +1,15 @@
-import { Flex } from "@radix-ui/themes";
+import { Container, Flex, Heading } from "@radix-ui/themes";
 
 function TaskForm() {
     return (
-        <Flex direction="row">
+        <Container>
+            <Heading>Manage my tasks</Heading>
+            <Flex>
 
-        </Flex>
+            </Flex>
+
+
+        </Container>
     )
     
 }
