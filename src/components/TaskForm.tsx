@@ -1,7 +1,14 @@
-import { Container, Flex, Heading, RadioGroup, TextArea, TextField, Box, Button, Select } from "@radix-ui/themes";
+import { Container, Flex, Heading, RadioGroup, TextArea, TextField, Box, Text, Select } from "@radix-ui/themes";
+
 
 
 function TaskForm() {
+
+    const rows = [];
+    for (let i = 0; i < 31; i++) {
+        rows.push(<Select.Item value={i.toString()} key={i}>{i}</Select.Item>);
+    }
+
     return (
         <Container p="5">
             <Heading>Manage my tasks</Heading>
@@ -34,57 +41,26 @@ function TaskForm() {
 
                         <Flex direction="column" px="5">
                             <Heading className="label py-3" weight="regular">Date</Heading>
-                            <Flex direction="row" gap="3">
-                                <Select.Root defaultValue="apple">
+                            <Flex direction="row" gap="3" align="center">
+                                <Text className="label">Day</Text>
+                                <Select.Root defaultValue="Day">
                                     <Select.Trigger />
                                     <Select.Content>
                                         <Select.Group>
-                                            <Select.Label>Fruits</Select.Label>
-                                            <Select.Item value="orange">Orange</Select.Item>
-                                            <Select.Item value="apple">Apple</Select.Item>
-                                            <Select.Item value="grape" disabled>
-                                                Grape
-                                            </Select.Item>
-                                        </Select.Group>
-                                        <Select.Separator />
-                                        <Select.Group>
-                                            <Select.Label>Vegetables</Select.Label>
-                                            <Select.Item value="carrot">Carrot</Select.Item>
-                                            <Select.Item value="potato">Potato</Select.Item>
+                                            <Select.Label>Day</Select.Label>
+
+                                            {rows}
                                         </Select.Group>
                                     </Select.Content>
                                 </Select.Root>
 
+                                <Text className="label">Month</Text>
                                 <Select.Root defaultValue="Day">
                                     <Select.Trigger />
                                     <Select.Content>
                                         <Select.Group>
                                             <Select.Label>Fruits</Select.Label>
-                                            <Select.Item value="orange">Orange</Select.Item>
-                                            <Select.Item value="apple">Apple</Select.Item>
-                                            <Select.Item value="grape" disabled>
-                                                Grape
-                                            </Select.Item>
-                                        </Select.Group>
-                                        <Select.Separator />
-                                        <Select.Group>
-                                            <Select.Label>Vegetables</Select.Label>
-                                            <Select.Item value="carrot">Carrot</Select.Item>
-                                            <Select.Item value="potato">Potato</Select.Item>
-                                        </Select.Group>
-                                    </Select.Content>
-                                </Select.Root>
-
-                                <Select.Root defaultValue="apple">
-                                    <Select.Trigger />
-                                    <Select.Content>
-                                        <Select.Group>
-                                            <Select.Label>Fruits</Select.Label>
-                                            <Select.Item value="orange">Orange</Select.Item>
-                                            <Select.Item value="apple">Apple</Select.Item>
-                                            <Select.Item value="grape" disabled>
-                                                Grape
-                                            </Select.Item>
+                                            
                                         </Select.Group>
                                         <Select.Separator />
                                         <Select.Group>
