@@ -1,12 +1,18 @@
 import { Container, Flex, Heading, RadioGroup, TextArea, TextField, Box, Text, Select } from "@radix-ui/themes";
+import { ReactElement, JSXElementConstructor, ReactNode } from "react";
 
 
 
 function TaskForm() {
 
     const rows = [];
-    for (let i = 0; i < 31; i++) {
+    for (let i = 1; i < 32; i++) {
         rows.push(<Select.Item value={i.toString()} key={i}>{i}</Select.Item>);
+    }
+
+    const months = [];
+    for (let j = 1; j < 13; j++) {
+        months.push(<Select.Item value={j.toString()} key={j}>{j}</Select.Item>);
     }
 
     return (
@@ -20,7 +26,6 @@ function TaskForm() {
                             <Box width="400px" className="bg-white rounded">
                                 <TextField.Root variant="classic" placeholder="Enter your task.."/>
                             </Box>
-                            
                         </Flex>
                         
                         <Flex  direction="column" p="5">
@@ -48,25 +53,18 @@ function TaskForm() {
                                     <Select.Content>
                                         <Select.Group>
                                             <Select.Label>Day</Select.Label>
-
                                             {rows}
                                         </Select.Group>
                                     </Select.Content>
                                 </Select.Root>
 
                                 <Text className="label">Month</Text>
-                                <Select.Root defaultValue="Day">
+                                <Select.Root defaultValue="Month">
                                     <Select.Trigger />
                                     <Select.Content>
                                         <Select.Group>
-                                            <Select.Label>Fruits</Select.Label>
-                                            
-                                        </Select.Group>
-                                        <Select.Separator />
-                                        <Select.Group>
-                                            <Select.Label>Vegetables</Select.Label>
-                                            <Select.Item value="carrot">Carrot</Select.Item>
-                                            <Select.Item value="potato">Potato</Select.Item>
+                                            <Select.Label>Month</Select.Label>
+                                            {months}
                                         </Select.Group>
                                     </Select.Content>
                                 </Select.Root>
@@ -84,7 +82,6 @@ function TaskForm() {
                 </Flex>
             </Flex>
         </Container>
-        
     )
     
 }
