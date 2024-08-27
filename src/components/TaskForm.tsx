@@ -1,7 +1,5 @@
-import { Container, Flex, Heading, RadioGroup, TextArea, TextField, Box, Text, Select } from "@radix-ui/themes";
-import { ReactElement, JSXElementConstructor, ReactNode } from "react";
-
-
+import { Container, Flex, Heading, RadioGroup, TextArea, TextField, Box, Text, Select, Badge } from "@radix-ui/themes";
+import Task from "./Task";
 
 function TaskForm() {
 
@@ -18,7 +16,7 @@ function TaskForm() {
     return (
         <Container p="5">
             <Heading>Manage my tasks</Heading>
-            <Flex direction="row">
+            <Flex direction="row" gap="3">
                 <Flex direction="row" gap="3" className="task-form rounded-xl" p="5" mt="5">
                     <form>
                         <Flex direction="column" px="5">
@@ -31,9 +29,9 @@ function TaskForm() {
                         <Flex  direction="column" p="5">
                             <Heading className="label pb-3" weight="regular">Priority</Heading>
                             <RadioGroup.Root color="lime" defaultValue="1" name="example">
-                                <RadioGroup.Item className="label" value="1">Default</RadioGroup.Item>
-                                <RadioGroup.Item className="label" value="2">Comfortable</RadioGroup.Item>
-                                <RadioGroup.Item className="label" value="3">Compact</RadioGroup.Item>
+                                <RadioGroup.Item className="label" value="low-priority">Low-Priority</RadioGroup.Item>
+                                <RadioGroup.Item className="label" value="important">Important</RadioGroup.Item>
+                                <RadioGroup.Item className="label" value="urgent">Urgent</RadioGroup.Item>
                             </RadioGroup.Root>
                         </Flex>
                         
@@ -77,8 +75,25 @@ function TaskForm() {
                     </form>
                 </Flex>
 
-                <Flex>
-        
+                <Flex direction="column" gap="3" p="5">
+                    <Flex className="task-form" direction="column" gap="3" p="5">
+                        <Heading className="label" weight="regular">Tasks Upcoming</Heading>
+                        <Task>
+                            <Flex direction="row" justify="between" align="center">
+                                <p>Nuts</p>
+                                <Badge color="lime" className="mx-3">2 days ago</Badge>
+                            </Flex>
+                        </Task>
+                    </Flex>
+                    <Flex className="task-form" direction="column" gap="3" p="4">
+                        <Heading className="label" weight="regular">Tasks Upcoming</Heading>
+                        <Task>
+                            <Flex direction="row" justify="between" align="center">
+                                <p>Nuts</p>
+                                <Badge color="lime" className="mx-3">2 days ago</Badge>
+                            </Flex>
+                        </Task>
+                    </Flex>
                 </Flex>
             </Flex>
         </Container>
