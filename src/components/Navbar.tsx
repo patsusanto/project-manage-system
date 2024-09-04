@@ -39,6 +39,7 @@ function Navbar() {
                         {icons[currentIcon]}
                         <Link to='/'>Overview</Link>
                         <Link to='/task-overview'>Task Overview</Link>
+                        <Link to='/request'>Requests</Link>
                     </Flex>
                     <Flex direction="column" className="justify-items-end" gap="3">
                         <Flex direction="row" align="center">
@@ -46,8 +47,6 @@ function Navbar() {
                             <Text className="px-4">Username</Text>
                         </Flex>
                     </Flex>
-                    
-                    
                 </>
                 
             ) : <>
